@@ -60,9 +60,8 @@ Para asegurar la calidad de los datos, se han implementado las siguientes reglas
 `GET /api/vuelos?empresa=Iberia&ordenarPor=lugarLlegada&ordenar=ASC`
 
 ### 2. Crear un nuevo vuelo (POST)
-**URL:** `/api/vuelos`  
-**Body (JSON):**
-```json
+URL: `/api/vuelos`  
+Body (JSON):
 {
   "nombreVuelo": "IB450",
   "empresa": "Iberia",
@@ -73,7 +72,6 @@ Para asegurar la calidad de los datos, se han implementado las siguientes reglas
 }
 ```
 
-
 ---
 
 
@@ -81,12 +79,12 @@ Para asegurar la calidad de los datos, se han implementado las siguientes reglas
 
 Para poner en marcha el proyecto, necesitas:
 
-Java JDK 17 o superior.
+- Java JDK 17 o superior.
 
-Maven (gestor de dependencias).
+- Maven (gestor de dependencias).
 
-Un IDE (IntelliJ IDEA, VS Code o Eclipse).
+- Un IDE (IntelliJ IDEA, VS Code o Eclipse).
 
-Postman o cualquier cliente HTTP para probar los endpoints.
+- Postman o cualquier cliente HTTP para probar los endpoints.
 
 
