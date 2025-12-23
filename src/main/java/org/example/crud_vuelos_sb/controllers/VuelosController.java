@@ -27,7 +27,7 @@ public class VuelosController {
     private VueloMapper mapper;
 
     /**
-     * GET /vuelos
+     * GET /api/vuelos
      * Obtiene todos los vuelos con filtros opcionales y ordenamiento.
      * Retorna una lista de VueloResponseDTO.
      */
@@ -48,7 +48,7 @@ public class VuelosController {
     }
 
     /**
-     * GET /vuelos/{id}
+     * GET /api/vuelos/{id}
      * Busca un vuelo por ID.
      */
     @GetMapping("/{id}")
@@ -59,7 +59,7 @@ public class VuelosController {
     }
 
     /**
-     * POST /vuelos
+     * POST /api/vuelos
      * Crea un nuevo vuelo a partir de un VueloRequestDTO.
      */
     @PostMapping
@@ -70,7 +70,7 @@ public class VuelosController {
     }
 
     /**
-     * PUT /vuelos/{id}
+     * PUT /api/vuelos/{id}
      * Actualiza un vuelo existente.
      */
     @PutMapping("/{id}")
@@ -81,13 +81,11 @@ public class VuelosController {
     }
 
     /**
-     * DELETE /vuelos/{id}
+     * DELETE /api/vuelos/{id}
      * Elimina un vuelo por su ID.
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable int id) {
-        Vuelo existente = service.obtenerPorId(id);
-
         service.eliminar(id);
         return ResponseEntity.ok("Vuelo eliminado satisfactoriamente.");
     }
