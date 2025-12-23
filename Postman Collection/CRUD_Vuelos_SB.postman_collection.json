@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "47afbc37-d622-4a7e-807f-253dd53f39b5",
+		"name": "CRUD_Vuelos_SB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48505735"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los Vuelos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar por empresa y ordenar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos?empresa=Iberia&ordenarPor=empresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos"
+					],
+					"query": [
+						{
+							"key": "empresa",
+							"value": "Iberia"
+						},
+						{
+							"key": "ordenarPor",
+							"value": "empresa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener el detalle del vuelo con ID 1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Davide\",\r\n    \"email\": \"davide@email.com\",\r\n    \"phone\": \"123456789\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenar Vuelos por empresa ASC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos?ordenarPor=empresa&ordenar=ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos"
+					],
+					"query": [
+						{
+							"key": "ordenarPor",
+							"value": "empresa"
+						},
+						{
+							"key": "ordenar",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenar Vuelos por empresa DESC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos?ordenarPor=empresa&ordenar=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos"
+					],
+					"query": [
+						{
+							"key": "ordenarPor",
+							"value": "empresa"
+						},
+						{
+							"key": "ordenar",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenar Vuelos por fecha salida ASC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos?ordenarPor=fechaSalida&ordenar=ASC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos"
+					],
+					"query": [
+						{
+							"key": "ordenarPor",
+							"value": "fechaSalida"
+						},
+						{
+							"key": "ordenar",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ordenar Vuelos por fecha salida DESC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos?ordenarPor=fechaSalida&ordenar=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos"
+					],
+					"query": [
+						{
+							"key": "ordenarPor",
+							"value": "fechaSalida"
+						},
+						{
+							"key": "ordenar",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un vuelo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreVuelo\": \"AR-2025\",\r\n    \"empresa\": \"Aerolíneas Argentinas\",\r\n    \"lugarSalida\": \"Buenos Aires\",\r\n    \"lugarLlegada\": \"Madrid\",\r\n    \"fechaSalida\": \"01-01-2026\",\r\n    \"fechaLlegada\": \"02-01-2026\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar el vuelo 1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreVuelo\": \"IB-101-REPROGRAMADO\",\r\n    \"empresa\": \"Iberia\",\r\n    \"lugarSalida\": \"Madrid\",\r\n    \"lugarLlegada\": \"Buenos Aires\",\r\n    \"fechaSalida\": \"12-03-2026\",\r\n    \"fechaLlegada\": \"13-03-2026\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el vuelo 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vuelos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vuelos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -14,13 +14,14 @@ Este proyecto es una aplicación desarrollada con **Spring Boot** que implementa
 ```
 El proyecto sigue una arquitectura por capas para separar las responsabilidades:
 
-* **`controllers`**: Exponen los endpoints de la API REST.
-* **`services`**: Contienen la lógica de negocio y el procesamiento de datos.
-* **`repositories`**: Gestionan la persistencia de datos (en este caso, una lista en memoria).
-* **`models`**: Definición de la entidad principal `Vuelo`.
-* **`dtos`**: Objetos de transferencia de datos para desacoplar la API del modelo interno.
-* **`exceptions`**: Manejo global de errores y excepciones personalizadas.
-* **`utils`**: Clases de apoyo para validación de fechas.
+src/main/java/org/example/crud_vuelos_sb/
+├── controllers/          # Endpoints de la API REST
+├── services/             # Lógica de negocio y filtros
+├── repositories/         # Gestión de datos en memoria (List)
+├── models/               # Entidad principal Vuelo
+├── dtos/                 # Objetos de transferencia (Request/Response) y Mappers
+├── exceptions/           # Manejo global de errores (@RestControllerAdvice)
+└── utils/                # Utilidades para validación de fechas
 ```
 
 
@@ -40,14 +41,13 @@ El proyecto sigue una arquitectura por capas para separar las responsabilidades:
 ---
 
 
-🔧 Lógica del Filtro (FiltroVuelos)
+🔧 Lógica del Programa
 
-* **CRUD Completo**: Gestión total de vuelos.
-* **Generación Automática de ID**: Los IDs se generan internamente mediante `AtomicInteger` para garantizar unicidad.
-* **Filtrado Combinable**: Búsqueda de vuelos por empresa, lugar de llegada y fecha de salida simultáneamente.
-* **Ordenamiento Dinámico**: Opción de ordenar los resultados por cualquier campo (por defecto: fecha de salida) en orden ascendente o descendente.
-* **Cálculo Automático**: Cada vuelo calcula automáticamente su `duracionDias` al ser consultado.
-* **Manejo de Errores**: Respuestas claras y formateadas ante errores de validación o recursos no encontrados.
+Para asegurar la calidad de los datos, se han implementado las siguientes reglas:
+1.  **Validación de Fechas**: No se permite crear vuelos donde la fecha de salida sea posterior a la de llegada.
+2.  **No Duplicados**: El sistema impide el registro de dos vuelos con el mismo nombre en la misma fecha de salida.
+3.  **Integridad**: El ID del vuelo es inmutable y gestionado por el sistema, evitando conflictos manuales.
+4.  **Formato Estándar**: Todas las fechas se comunican en formato `dd-MM-yyyy`.
 
 
 ---
